@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShortBrowse</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="browser-shell">
+      <header class="chrome-bar">
+        <div class="tab-strip" id="tab-strip" aria-label="Open tabs"></div>
+        <div class="toolbar-row">
+          <div class="window-actions">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+
+          <div class="navigation-group">
+            <button class="toolbar-btn" id="back-btn" type="button" aria-label="Go back">←</button>
+            <button class="toolbar-btn" id="forward-btn" type="button" aria-label="Go forward">→</button>
+            <button class="toolbar-btn" id="reload-btn" type="button" aria-label="Reload">↻</button>
+          </div>
+
+          <label class="address-bar" aria-label="Address bar">
+            <span class="address-lock">🔒</span>
+            <input id="address-input" type="text" value="about:home" spellcheck="false" />
+          </label>
+
+          <div class="toolbar-actions">
+            <button class="toolbar-btn" id="new-tab-btn" type="button" aria-label="New tab">＋</button>
+            <button class="toolbar-btn" id="focus-search" type="button" aria-label="Focus address bar">⌕</button>
+            <div class="profile-avatar">J</div>
+          </div>
+        </div>
+      </header>
+
+      <main class="browser-body">
+        <aside class="sidebar">
+          <div class="sidebar-header">
+            <h2>Bookmarks</h2>
+          </div>
+          <nav id="bookmark-list" class="bookmark-list" aria-label="Browser bookmarks"></nav>
+        </aside>
+
+        <section class="content-area">
+          <div id="loading-indicator" class="loading-indicator hidden">Loading…</div>
+          <iframe id="browser-frame" title="Browser view" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
